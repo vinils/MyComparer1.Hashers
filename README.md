@@ -1,2 +1,2 @@
 # MyComparer.Hashers (C#)
-Compare with hash layer 
+Layer to Comparer with hash 
