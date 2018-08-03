@@ -1,0 +1,6 @@
+[submodule "MyList1.DAL"]
+	path = MyList1.DAL
+	url = https://github.com/vinils/MyList1.DAL.git
+[submodule "MyList1"]
+	path = MyList1
+	url = https://github.com/vinils/MyList1.git

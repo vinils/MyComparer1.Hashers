@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(SolutionDir)\MyList1\MyList\MyList.csproj" />
+    <ProjectReference Include="$(SolutionDir)\MyList1.DAL\MyList.DAL\MyList.DAL.csproj" />
+  </ItemGroup>
+
+</Project>
