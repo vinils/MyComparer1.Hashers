@@ -63,6 +63,20 @@
             return new FileHash(enumerable);
         }
 
+        public FileHash ToMemory()
+        {
+            return this;
+        }
+
+        public IEnumerable<Entities.FileHash> Where(Func<Entities.FileHash, int, bool> predicate)
+            => _items.Where(predicate);
+
+        public IEnumerable<Entities.FileHash> Where(Func<Entities.FileHash, bool> predicate)
+            => _items.Where(predicate);
+
+        public IEnumerable<IGrouping<TKey, Entities.FileHash>> GroupBy<TKey>(Func<Entities.FileHash, TKey> keySelector)
+            => _items.GroupBy(keySelector);
+
         IEnumerator<FileInfo> IEnumerable<FileInfo>.GetEnumerator()
             => ((IEnumerable<FileInfo>)_items).GetEnumerator();
 
