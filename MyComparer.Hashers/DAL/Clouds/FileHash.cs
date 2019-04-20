@@ -84,7 +84,14 @@
                 command.Parameters.AddWithValue("@FullName", fileHash.File.ToString());
                 command.Parameters.AddWithValue("@Hash", fileHash.Hash);
 
-                return command.ExecuteNonQuery();
+                try
+                {
+                    return command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
         }
 
@@ -124,6 +131,11 @@
             throw new NotImplementedException();
         }
 
+        public Memories.FileHash ToMemory()
+        {
+            return this;
+        }
+
         public IFileHash Equals(MyListDAL.Entities.File file, IHasher hasherInstance)
         {
             throw new NotImplementedException();
@@ -131,6 +143,11 @@
             //var enumerable = ((IEnumerable<Entities.FileHash>)this).Where(fH => fH == fileHash);
 
             //return new FileHash(enumerable);
+        }
+
+        public static implicit operator Memories.FileHash(FileHash fileHash)
+        {
+            return new Memories.FileHash(fileHash);
         }
     }
 }

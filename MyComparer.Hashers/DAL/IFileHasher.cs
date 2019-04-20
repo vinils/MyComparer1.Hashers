@@ -8,5 +8,6 @@
         IFileHash Duplicates();
         IFileHash Distincts();
         IFileHash Equals(MyListDAL.Entities.File file, IHasher hasherInstance);
+        DAL.Memories.FileHash ToMemory();
     }
 }
